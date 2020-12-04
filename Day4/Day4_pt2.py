@@ -45,7 +45,6 @@ def check_id(passports):
     for passport in passports:
         check_list = []
         passport = passport.split()
-        print(passport)
 
         for field in passport:
             field_name = field.split(':')[0]
@@ -58,7 +57,6 @@ def check_id(passports):
                 if valid_value(field):
                     valid_field_count += 1
             if valid_field_count == 8:
-                print('valid normal')
                 valid += 1
         elif check_list == req_fields_nocid:
             valid_field_count = 0
@@ -66,7 +64,6 @@ def check_id(passports):
                 if valid_value(field):
                     valid_field_count += 1
             if valid_field_count == 7:
-                print('valid nocid')
                 valid += 1
 
     return valid
